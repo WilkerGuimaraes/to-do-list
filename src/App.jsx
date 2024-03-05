@@ -1,9 +1,11 @@
+import Header from "./components/Header";
+
 import { Container } from "./App.style";
 
 function App() {
   return (
     <Container>
-      <h1>To-do List</h1>
+      <Header />
     </Container>
   );
 }
