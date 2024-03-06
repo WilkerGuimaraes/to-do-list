@@ -17,6 +17,10 @@ export const TaskContainer = styled.div`
       overflow-wrap: break-word;
       max-width: 300px;
       color: #eee;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
     }
   }
 
