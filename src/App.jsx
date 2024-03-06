@@ -20,12 +20,18 @@ function App() {
       },
     ]);
   };
+
+  const handleTaskDeletion = (taskId) => {
+    const removedTaks = tasks.filter((task) => task.id !== taskId);
+
+    setTasks(removedTaks);
+  };
   return (
     <Container>
       <Header />
       <AddTask handleTaskAddition={handleTaskAddition} />
 
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} handleTaskDeletion={handleTaskDeletion} />
     </Container>
   );
 }
