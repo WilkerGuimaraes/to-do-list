@@ -2,10 +2,12 @@ import { CgInfo, CgClose } from "react-icons/cg";
 
 import { TaskContainer } from "./Task.style";
 
-const Task = ({ task, handleTaskDeletion }) => {
+const Task = ({ task, handleTaskDeletion, handleTaskClick }) => {
   return (
-    <TaskContainer>
-      <div className="task-title">
+    <TaskContainer
+      style={task.isCompleted ? { borderLeft: "6px solid chartreuse" } : {}}
+    >
+      <div className="task-title" onClick={() => handleTaskClick(task.id)}>
         <p>{task.title}</p>
       </div>
 

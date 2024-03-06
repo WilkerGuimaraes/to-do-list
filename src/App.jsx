@@ -10,6 +10,17 @@ import Tasks from "./components/Tasks";
 function App() {
   const [tasks, setTasks] = useState([]);
 
+  const handleTaskClick = (taskId) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === taskId)
+        return { ...task, isCompleted: !task.isCompleted };
+
+      return task;
+    });
+
+    setTasks(newTasks);
+  };
+
   const handleTaskAddition = (taskTitle) => {
     setTasks([
       ...tasks,
@@ -31,7 +42,11 @@ function App() {
       <Header />
       <AddTask handleTaskAddition={handleTaskAddition} />
 
-      <Tasks tasks={tasks} handleTaskDeletion={handleTaskDeletion} />
+      <Tasks
+        tasks={tasks}
+        handleTaskDeletion={handleTaskDeletion}
+        handleTaskClick={handleTaskClick}
+      />
     </Container>
   );
 }

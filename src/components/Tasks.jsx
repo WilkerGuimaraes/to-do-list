@@ -1,6 +1,6 @@
 import Task from "./Task";
 
-const Tasks = ({ tasks, handleTaskDeletion }) => {
+const Tasks = ({ tasks, handleTaskDeletion, handleTaskClick }) => {
   return (
     <>
       {tasks.map((task) => (
@@ -8,6 +8,7 @@ const Tasks = ({ tasks, handleTaskDeletion }) => {
           key={task.id}
           task={task}
           handleTaskDeletion={handleTaskDeletion}
+          handleTaskClick={handleTaskClick}
         />
       ))}
     </>
