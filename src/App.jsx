@@ -19,10 +19,21 @@ function App() {
       isCompleted: true,
     },
   ]);
+
+  const handleTaskAddition = (taskTitle) => {
+    setTasks([
+      ...tasks,
+      {
+        id: crypto.randomUUID(),
+        title: taskTitle,
+        isCompleted: false,
+      },
+    ]);
+  };
   return (
     <Container>
       <Header />
-      <AddTask />
+      <AddTask handleTaskAddition={handleTaskAddition} />
 
       <Tasks tasks={tasks} />
     </Container>
