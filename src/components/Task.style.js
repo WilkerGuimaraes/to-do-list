@@ -13,7 +13,28 @@ export const TaskContainer = styled.div`
     cursor: pointer;
 
     p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 300px;
       color: #eee;
     }
+  }
+
+  .buttons-container {
+    display: flex;
+  }
+
+  .see-task-details-button,
+  .remove-task-button {
+    border: none;
+    background: none;
+    padding: 3px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .icon {
+    font-size: 24px;
+    color: chartreuse;
   }
 `;
