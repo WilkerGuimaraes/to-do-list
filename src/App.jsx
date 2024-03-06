@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 import Header from "./components/Header";
 import AddTask from "./components/AddTask";
+import Tasks from "./components/Tasks";
 
 import { Container } from "./App.style";
-import Tasks from "./components/Tasks";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const { data } = await axios.get(
+        "https://jsonplaceholder.typicode.com/todos?_limit=10"
+      );
+      setTasks(data);
+    };
+    fetchTasks();
+  }, []);
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
