@@ -5,7 +5,7 @@ import { TaskContainer } from "./Task.style";
 const Task = ({ task, handleTaskDeletion, handleTaskClick }) => {
   return (
     <TaskContainer
-      style={task.isCompleted ? { borderLeft: "6px solid chartreuse" } : {}}
+      style={task.completed ? { borderLeft: "6px solid chartreuse" } : {}}
     >
       <div className="task-title" onClick={() => handleTaskClick(task.id)}>
         <p>{task.title}</p>

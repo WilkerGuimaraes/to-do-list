@@ -23,8 +23,7 @@ function App() {
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
-      if (task.id === taskId)
-        return { ...task, isCompleted: !task.isCompleted };
+      if (task.id === taskId) return { ...task, completed: !task.completed };
 
       return task;
     });
@@ -38,7 +37,7 @@ function App() {
       {
         id: uuidv4(),
         title: taskTitle,
-        isCompleted: false,
+        completed: false,
       },
     ]);
   };
