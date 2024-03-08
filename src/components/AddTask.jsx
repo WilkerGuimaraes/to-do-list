@@ -16,6 +16,8 @@ const AddTask = ({ handleTaskAddition }) => {
   };
 
   const handleAddTaskClick = () => {
+    if (inputData === "") return;
+
     handleTaskAddition(inputData);
     setInputData("");
   };
@@ -29,7 +31,6 @@ const AddTask = ({ handleTaskAddition }) => {
   return (
     <AddTaskContainer>
       <AddTaskInput
-        required
         type="text"
         value={inputData}
         onChange={handleInputChange}
