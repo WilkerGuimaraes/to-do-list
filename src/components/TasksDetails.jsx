@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import Button from "./Button";
 
@@ -6,11 +6,16 @@ import { TaskDetailsContainer } from "./TasksDetails.style";
 
 const TaskDetails = () => {
   const params = useParams();
+  const navigate = useNavigate();
+
+  const handleBackButtonClick = () => {
+    navigate(-1);
+  };
 
   return (
     <TaskDetailsContainer>
       <div className="back-button-container">
-        <Button>Back</Button>
+        <Button onClick={handleBackButtonClick}>Back</Button>
       </div>
 
       <div className="task-details-content">
