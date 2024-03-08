@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
 import AddTask from "./components/AddTask";
@@ -48,16 +49,27 @@ function App() {
     setTasks(removedTaks);
   };
   return (
-    <Container>
-      <Header />
-      <AddTask handleTaskAddition={handleTaskAddition} />
+    <Router>
+      <Container>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <AddTask handleTaskAddition={handleTaskAddition} />
 
-      <Tasks
-        tasks={tasks}
-        handleTaskDeletion={handleTaskDeletion}
-        handleTaskClick={handleTaskClick}
-      />
-    </Container>
+                <Tasks
+                  tasks={tasks}
+                  handleTaskDeletion={handleTaskDeletion}
+                  handleTaskClick={handleTaskClick}
+                />
+              </>
+            }
+          />
+        </Routes>
+      </Container>
+    </Router>
   );
 }
 
