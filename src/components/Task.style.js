@@ -30,11 +30,15 @@ export const TaskContainer = styled.div`
 
   .see-task-details-button,
   .remove-task-button {
+    background: transparent;
     border: none;
-    background: none;
+    border-radius: 999px;
     padding: 3px;
     margin: 0 5px;
-    cursor: pointer;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .icon {
