@@ -23,6 +23,7 @@ const AddTask = ({ handleTaskAddition }) => {
   return (
     <AddTaskContainer>
       <AddTaskInput
+        required
         type="text"
         value={inputData}
         onChange={handleInputChange}
