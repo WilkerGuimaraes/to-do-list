@@ -20,6 +20,12 @@ const AddTask = ({ handleTaskAddition }) => {
     setInputData("");
   };
 
+  const handleKeyboardEvent = (event) => {
+    if ((event.key === "Enter") & (event.ctrlKey || event.metaKey)) {
+      handleTaskClick();
+    }
+  };
+
   return (
     <AddTaskContainer>
       <AddTaskInput
@@ -27,6 +33,7 @@ const AddTask = ({ handleTaskAddition }) => {
         type="text"
         value={inputData}
         onChange={handleInputChange}
+        onKeyDown={handleKeyboardEvent}
       />
 
       <AddTaskButtonContainer>
