@@ -15,14 +15,14 @@ const AddTask = ({ handleTaskAddition }) => {
     setInputData(event.target.value);
   };
 
-  const handleTaskClick = () => {
+  const handleAddTaskClick = () => {
     handleTaskAddition(inputData);
     setInputData("");
   };
 
   const handleKeyboardEvent = (event) => {
     if ((event.key === "Enter") & (event.ctrlKey || event.metaKey)) {
-      handleTaskClick();
+      handleAddTaskClick();
     }
   };
 
@@ -37,7 +37,7 @@ const AddTask = ({ handleTaskAddition }) => {
       />
 
       <AddTaskButtonContainer>
-        <Button onClick={handleTaskClick}>Add</Button>
+        <Button onClick={handleAddTaskClick}>Add</Button>
       </AddTaskButtonContainer>
     </AddTaskContainer>
   );
