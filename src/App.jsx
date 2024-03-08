@@ -69,7 +69,7 @@ function App() {
             }
           />
 
-          <Route path="/:tasktitle" element={<TaskDetails />} />
+          <Route path="/:taskTitle" element={<TaskDetails />} />
         </Routes>
       </Container>
     </Router>
