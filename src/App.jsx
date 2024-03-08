@@ -8,6 +8,7 @@ import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 
 import { Container } from "./App.style";
+import TaskDetails from "./components/TasksDetails";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -67,6 +68,8 @@ function App() {
               </>
             }
           />
+
+          <Route path="/:tasktitle" element={<TaskDetails />} />
         </Routes>
       </Container>
     </Router>
