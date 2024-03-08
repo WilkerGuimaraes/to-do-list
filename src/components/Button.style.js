@@ -9,10 +9,10 @@ export const ButtonStyle = styled.button`
   border-radius: 5px;
   background-color: chartreuse;
   color: #444;
-  cursor: pointer;
   transition: all 0.5s ease;
 
   &:hover {
+    cursor: pointer;
     background-color: #444;
     color: chartreuse;
   }
